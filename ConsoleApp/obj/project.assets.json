@@ -1,0 +1,92 @@
+{
+  "version": 3,
+  "targets": {
+    "net7.0": {
+      "SuperAutoProfessionals.Game/0.0.10": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/SuperAutoProfessionals.Game.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SuperAutoProfessionals.Game.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "SuperAutoProfessionals.Game/0.0.10": {
+      "type": "project",
+      "path": "../Game/Game.csproj",
+      "msbuildProject": "../Game/Game.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net7.0": [
+      "SuperAutoProfessionals.Game >= 0.0.10"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\SuperMicro\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "0.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\SuperMicro\\source\\repos\\SuperAutoProfessionals\\src\\SuperAutoProfessionals\\ConsoleApp\\ConsoleApp.csproj",
+      "projectName": "SuperAutoProfessionals.ConsoleApp",
+      "projectPath": "C:\\Users\\SuperMicro\\source\\repos\\SuperAutoProfessionals\\src\\SuperAutoProfessionals\\ConsoleApp\\ConsoleApp.csproj",
+      "packagesPath": "C:\\Users\\SuperMicro\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\SuperMicro\\Source\\Repos\\SuperAutoProfessionals\\src\\SuperAutoProfessionals\\ConsoleApp\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\SuperMicro\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net7.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {},
+        "https://pkgs.dev.azure.com/GMMotorsports/RVS_209365/_packaging/RVS_209365/nuget/v3/index.json": {}
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "projectReferences": {
+            "C:\\Users\\SuperMicro\\source\\repos\\SuperAutoProfessionals\\src\\SuperAutoProfessionals\\Game\\Game.csproj": {
+              "projectPath": "C:\\Users\\SuperMicro\\source\\repos\\SuperAutoProfessionals\\src\\SuperAutoProfessionals\\Game\\Game.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net7.0": {
+        "targetAlias": "net7.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

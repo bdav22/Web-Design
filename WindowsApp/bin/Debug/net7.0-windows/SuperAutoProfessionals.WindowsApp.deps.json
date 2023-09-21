@@ -1,0 +1,50 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "SuperAutoProfessionals.WindowsApp/0.0.1": {
+        "dependencies": {
+          "SuperAutoProfessionals.Game": "0.0.10",
+          "SuperAutoProfessionals.Game.Reference": "0.0.10.0"
+        },
+        "runtime": {
+          "SuperAutoProfessionals.WindowsApp.dll": {}
+        }
+      },
+      "SuperAutoProfessionals.Game/0.0.10": {
+        "runtime": {
+          "SuperAutoProfessionals.Game.dll": {}
+        }
+      },
+      "SuperAutoProfessionals.Game.Reference/0.0.10.0": {
+        "runtime": {
+          "SuperAutoProfessionals.Game.dll": {
+            "assemblyVersion": "0.0.10.0",
+            "fileVersion": "0.0.10.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "SuperAutoProfessionals.WindowsApp/0.0.1": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SuperAutoProfessionals.Game/0.0.10": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SuperAutoProfessionals.Game.Reference/0.0.10.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

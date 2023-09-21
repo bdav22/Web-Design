@@ -1,0 +1,12 @@
+C:\Users\SuperMicro\Source\Repos\SuperAutoProfessionals\src\SuperAutoProfessionals\Game\bin\Debug\net7.0\SuperAutoProfessionals.Game.deps.json
+C:\Users\SuperMicro\Source\Repos\SuperAutoProfessionals\src\SuperAutoProfessionals\Game\bin\Debug\net7.0\SuperAutoProfessionals.Game.dll
+C:\Users\SuperMicro\Source\Repos\SuperAutoProfessionals\src\SuperAutoProfessionals\Game\bin\Debug\net7.0\SuperAutoProfessionals.Game.pdb
+C:\Users\SuperMicro\Source\Repos\SuperAutoProfessionals\src\SuperAutoProfessionals\Game\obj\Debug\net7.0\Game.csproj.AssemblyReference.cache
+C:\Users\SuperMicro\Source\Repos\SuperAutoProfessionals\src\SuperAutoProfessionals\Game\obj\Debug\net7.0\Game.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\SuperMicro\Source\Repos\SuperAutoProfessionals\src\SuperAutoProfessionals\Game\obj\Debug\net7.0\Game.AssemblyInfoInputs.cache
+C:\Users\SuperMicro\Source\Repos\SuperAutoProfessionals\src\SuperAutoProfessionals\Game\obj\Debug\net7.0\Game.AssemblyInfo.cs
+C:\Users\SuperMicro\Source\Repos\SuperAutoProfessionals\src\SuperAutoProfessionals\Game\obj\Debug\net7.0\Game.csproj.CoreCompileInputs.cache
+C:\Users\SuperMicro\Source\Repos\SuperAutoProfessionals\src\SuperAutoProfessionals\Game\obj\Debug\net7.0\SuperAutoProfessionals.Game.dll
+C:\Users\SuperMicro\Source\Repos\SuperAutoProfessionals\src\SuperAutoProfessionals\Game\obj\Debug\net7.0\refint\SuperAutoProfessionals.Game.dll
+C:\Users\SuperMicro\Source\Repos\SuperAutoProfessionals\src\SuperAutoProfessionals\Game\obj\Debug\net7.0\SuperAutoProfessionals.Game.pdb
+C:\Users\SuperMicro\Source\Repos\SuperAutoProfessionals\src\SuperAutoProfessionals\Game\obj\Debug\net7.0\ref\SuperAutoProfessionals.Game.dll
