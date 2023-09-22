@@ -1,11 +1,11 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 /*
- * when die add +2/+2 to random friend
+ * when die spawn 2 +5/+5 friends
  */
 
 namespace SuperAutoProfessionals;
@@ -14,42 +14,33 @@ public class Lawyer : Professional
 {
     public override string CodeName => "Lw";
 
-    int health;
-    int attack;
-
     internal override bool On(Event e)
     {
         base.On(e);
 
-       
+        if (e.Code != EventCode.Die) return false;
 
         var p = e.Professional!;
-        
+        if (p != this) return false;
 
-        if (e.Code != EventCode.Die || p != this) return false;
+        var pos = p.Index;
+        var friend = new Professional
+        {
+            Attack = 5,
+            Health = 5
+        };
 
+        var pos2 = p.Index + 1;
+        var friend2 = new Professional
+        {
+            Attack = 5,
+            Health = 5
+        };
 
-       
-            //get location, full health 
-            var pos = p.Index;
-            var startHealth = p.Health;
-            var startAttack = p.Attack;
-
-            //spawn back at location and full health 
-            var myself = new Lawyer
-            {
-                Attack = startAttack,
-                Health = startHealth
-            };
-
-            Log($"Spawning {p}");
-            Game.Spwan(p.Team, myself, pos);
-
-
-        
+        Log($"Trying to spawn {friend} at {pos}");
+        Game.Spwan(p.Team, friend, pos);
+        Log($"Trying to spawn {friend2} at {pos2}");
+        Game.Spwan(p.Team, friend2, pos2);
         return true;
     }
 }
-
- 
-
