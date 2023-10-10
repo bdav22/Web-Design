@@ -33,10 +33,11 @@ public class Professional
 
 	public int Index => Team.GetIndex(this);
 
-	public virtual string CodeName => "Pr";
+    //NEED TO ADD GETTER AND SETTER FOR CODENAME
+    public virtual string CodeName { get; set; } = "Pr";
 
-	/// <returns>true if something has been done</returns>
-	internal virtual bool On(Event e)
+    /// <returns>true if something has been done</returns>
+    internal virtual bool On(Event e)
 	{
 #if LOG
 		if (e.Professional == null)
