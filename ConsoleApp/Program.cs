@@ -5,6 +5,66 @@ namespace SuperAutoProfessionals.ConsoleApp;
 
 internal class Program
 {
+
+
+    static Professional? CreateProfessionalByCodeName(string codeName, int attNum, int hthNum)
+    {
+        switch (codeName)
+        {
+            default: return null;
+
+            case "Bu": return new Buthcer()
+            {
+                Attack = attNum,
+                Health = hthNum
+            };
+            case "Pr": return new Professional()
+            {
+                Attack = attNum,
+                Health = hthNum
+            }; 
+            case "Ch": return new Chef()
+            {
+                Attack = attNum,
+                Health = hthNum
+            };
+            case "GD": return new GraveDigger()
+            {
+                Attack = attNum,
+                Health = hthNum
+            };
+            case "Lw": return new Lawyer()
+            {
+                Attack = attNum,
+                Health = hthNum
+            };
+            case "So": return new Soldier()
+            {
+                Attack = attNum,
+                Health = hthNum
+            };
+            case "Tr": return new Trainer()
+            {
+                Attack = attNum,
+                Health = hthNum
+            };
+            case "Nu": return new Nurse()
+            {
+                Attack = attNum,
+                Health = hthNum
+            };
+            case "Dc": return new Doctor()
+            {
+                Attack = attNum,
+                Health = hthNum
+            };
+            case "-": return null;
+               
+
+        }
+    }
+
+
     static void Main()
     {
 
@@ -39,14 +99,8 @@ internal class Program
             hthStr = Console.ReadLine();
             if (int.TryParse(hthStr, out int hthNum)) ;
 
-            Professional newProfessional = new Professional
-            {
-                Attack = attNum,
-                Health = hthNum,
-                CodeName = codeName
-            };
             
-            left.Add(newProfessional);
+            left.Add(CreateProfessionalByCodeName(codeName, attNum, hthNum));
 
 
         }
@@ -76,14 +130,9 @@ internal class Program
             hthStr = Console.ReadLine();
             if (int.TryParse(hthStr, out int hthNum)) ;
 
-            Professional newProfessional = new Professional
-            {
-                Attack = attNum,
-                Health = hthNum,
-                CodeName = codeName
-            };
+           
 
-            right.Add(newProfessional);
+            right.Add(CreateProfessionalByCodeName(codeName, attNum, hthNum));
 
 
         }
