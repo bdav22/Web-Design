@@ -6,7 +6,7 @@ namespace SuperAutoProfessionals.ConsoleApp;
 internal class Program
 {
 
-
+   //create prof by codename, health, and attack input
     static Professional? CreateProfessionalByCodeName(string codeName, int attNum, int hthNum)
     {
         switch (codeName)
@@ -77,11 +77,11 @@ internal class Program
 
         List<Professional> left = new List<Professional>();
         
-
-        
 		//left team user input
         for (int i = 0; i < 5; i++)
         {
+
+            int attNum, hthNum;
             
             Console.WriteLine("Enter left team professional at " + (i + 1) + ": ");
 
@@ -90,16 +90,36 @@ internal class Program
             codeName = Console.ReadLine();
 
             //read in attack
-            Console.WriteLine("Attack: ");
-            attStr = Console.ReadLine();
-            if (int.TryParse(attStr, out int attNum)) ;
+            while (true)
+            {
+                Console.WriteLine("Attack: ");
+                attStr = Console.ReadLine();
+                if (int.TryParse(attStr, out attNum) && attNum >= 1 && attNum <= 50)
+                {
+                    break; // Break the loop when valid input is provided.
+                }
+                else
+                {
+                    Console.WriteLine("Invalid input. Attack must be between 1 and 50.");
+                }
+            }
 
             //read in health
-            Console.WriteLine("Health: ");
-            hthStr = Console.ReadLine();
-            if (int.TryParse(hthStr, out int hthNum)) ;
+            while (true)
+            {
+                Console.WriteLine("Health: ");
+                hthStr = Console.ReadLine();
+                if (int.TryParse(hthStr, out hthNum) && hthNum >= 0 && hthNum <= 50)
+                {
+                    break; // Break the loop when valid input is provided.
+                }
+                else
+                {
+                    Console.WriteLine("Invalid input. Health must be between 1 and 50.");
+                }
+            }
 
-            
+
             left.Add(CreateProfessionalByCodeName(codeName, attNum, hthNum));
 
 
@@ -107,12 +127,14 @@ internal class Program
 
 
 
-
-        List<Professional> right = new List<Professional>();
+        //create right team
+         List<Professional> right = new List<Professional>();
 
         //right team user input
         for (int i = 0; i < 5; i++)
         {
+
+            int attNum, hthNum;
 
             Console.WriteLine("Enter right team professional at " + (i + 1) + ": ");
 
@@ -121,19 +143,37 @@ internal class Program
             codeName = Console.ReadLine();
 
             //read in attack
-            Console.WriteLine("Attack: ");
-            attStr = Console.ReadLine();
-            if (int.TryParse(attStr, out int attNum)) ;
+            while (true)
+            {
+                Console.WriteLine("Attack: ");
+                attStr = Console.ReadLine();
+                if (int.TryParse(attStr, out attNum) && attNum >= 1 && attNum <= 50)
+                {
+                    break; // Break the loop when valid input is provided.
+                }
+                else
+                {
+                    Console.WriteLine("Invalid input. Attack must be between 1 and 50.");
+                }
+            }
 
             //read in health
-            Console.WriteLine("Health: ");
-            hthStr = Console.ReadLine();
-            if (int.TryParse(hthStr, out int hthNum)) ;
+            while (true)
+            {
+                Console.WriteLine("Health: ");
+                hthStr = Console.ReadLine();
+                if (int.TryParse(hthStr, out hthNum) && hthNum >= 0 && hthNum <= 50)
+                {
+                    break; // Break the loop when valid input is provided.
+                }
+                else
+                {
+                    Console.WriteLine("Invalid input. Health must be between 1 and 50.");
+                }
+            }
 
-           
 
             right.Add(CreateProfessionalByCodeName(codeName, attNum, hthNum));
-
 
         }
 
