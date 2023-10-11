@@ -6,7 +6,7 @@ namespace SuperAutoProfessionals.ConsoleApp;
 internal class Program
 {
 
-   //create prof by codename, health, and attack input
+    //create prof by codename, health, and attack input
     static Professional? CreateProfessionalByCodeName(string codeName, int attNum, int hthNum)
     {
         switch (codeName)
@@ -64,6 +64,8 @@ internal class Program
         }
     }
 
+    //list of valid codenames
+    private static List<string> validCodeNames = new List<string> { "Bu", "Pr", "Ch", "GD", "Lw", "So", "Tr", "Nu", "Dc" };
 
     static void Main()
     {
@@ -73,7 +75,6 @@ internal class Program
         string attStr;
         string hthStr;
 
-       
 
         List<Professional> left = new List<Professional>();
         
@@ -85,10 +86,21 @@ internal class Program
             
             Console.WriteLine("Enter left team professional at " + (i + 1) + ": ");
 
+          
             //read in codename
-            Console.WriteLine("Code Name: ");
-            codeName = Console.ReadLine();
-
+            while (true)
+            {
+                Console.WriteLine("Code Name: ");
+                codeName = Console.ReadLine();
+                if (validCodeNames.Contains(codeName))
+                {
+                    break; // Break the loop when valid input is provided.
+                }
+                else
+                {
+                    Console.WriteLine("Invalid professional");
+                }
+            }
             //read in attack
             while (true)
             {
@@ -139,8 +151,19 @@ internal class Program
             Console.WriteLine("Enter right team professional at " + (i + 1) + ": ");
 
             //read in codename
-            Console.WriteLine("Code Name: ");
-            codeName = Console.ReadLine();
+            while (true)
+            {
+                Console.WriteLine("Code Name: ");
+                codeName = Console.ReadLine();
+                if (validCodeNames.Contains(codeName))
+                {
+                    break; // Break the loop when valid input is provided.
+                }
+                else
+                {
+                    Console.WriteLine("Invalid professional");
+                }
+            }
 
             //read in attack
             while (true)
