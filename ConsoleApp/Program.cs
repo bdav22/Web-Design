@@ -64,6 +64,74 @@ internal class Program
         }
     }
 
+
+    // Create a method to build a team of professionals
+    private static List<Professional> BuildTeam(string teamName)
+    {
+        List<Professional> team = new List<Professional>();
+
+        for (int i = 0; i < 5; i++)
+        {
+            int attNum, hthNum;
+            string codeName;
+
+            Console.WriteLine($"Enter {teamName} team professional at " + (i + 1) + ": ");
+
+            // Read in codename
+            while (true)
+            {
+                Console.WriteLine("Code Name: ");
+                codeName = Console.ReadLine();
+                if (validCodeNames.Contains(codeName))
+                {
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Invalid professional");
+                }
+            }
+
+            //read in attack
+            while (true)
+            {
+                Console.WriteLine("Attack: ");
+                string attStr = Console.ReadLine();
+                if (int.TryParse(attStr, out attNum) && attNum >= 1 && attNum <= 50)
+                {
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Invalid input. Attack must be between 1 and 50.");
+                }
+            }
+
+            //read in health
+            while (true)
+            {
+                Console.WriteLine("Health: ");
+                string hthStr = Console.ReadLine();
+                if (int.TryParse(hthStr, out hthNum) && hthNum >= 0 && hthNum <= 50)
+                {
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Invalid input. Health must be between 0 and 50.");
+                }
+            }
+
+            team.Add(CreateProfessionalByCodeName(codeName, attNum, hthNum));
+        }
+
+        return team;
+    }
+
+
+
+
+
     //list of valid codenames
     private static List<string> validCodeNames = new List<string> { "Bu", "Pr", "Ch", "GD", "Lw", "So", "Tr", "Nu", "Dc" };
 
@@ -76,130 +144,9 @@ internal class Program
         string hthStr;
 
 
-        List<Professional> left = new List<Professional>();
-        
-		//left team user input
-        for (int i = 0; i < 5; i++)
-        {
+        List<Professional> left = BuildTeam("left");
 
-            int attNum, hthNum;
-            
-            Console.WriteLine("Enter left team professional at " + (i + 1) + ": ");
-
-          
-            //read in codename
-            while (true)
-            {
-                Console.WriteLine("Code Name: ");
-                codeName = Console.ReadLine();
-                if (validCodeNames.Contains(codeName))
-                {
-                    break; // Break the loop when valid input is provided.
-                }
-                else
-                {
-                    Console.WriteLine("Invalid professional");
-                }
-            }
-            //read in attack
-            while (true)
-            {
-                Console.WriteLine("Attack: ");
-                attStr = Console.ReadLine();
-                if (int.TryParse(attStr, out attNum) && attNum >= 1 && attNum <= 50)
-                {
-                    break; // Break the loop when valid input is provided.
-                }
-                else
-                {
-                    Console.WriteLine("Invalid input. Attack must be between 1 and 50.");
-                }
-            }
-
-            //read in health
-            while (true)
-            {
-                Console.WriteLine("Health: ");
-                hthStr = Console.ReadLine();
-                if (int.TryParse(hthStr, out hthNum) && hthNum >= 0 && hthNum <= 50)
-                {
-                    break; // Break the loop when valid input is provided.
-                }
-                else
-                {
-                    Console.WriteLine("Invalid input. Health must be between 1 and 50.");
-                }
-            }
-
-
-            left.Add(CreateProfessionalByCodeName(codeName, attNum, hthNum));
-
-
-        }
-
-
-
-        //create right team
-         List<Professional> right = new List<Professional>();
-
-        //right team user input
-        for (int i = 0; i < 5; i++)
-        {
-
-            int attNum, hthNum;
-
-            Console.WriteLine("Enter right team professional at " + (i + 1) + ": ");
-
-            //read in codename
-            while (true)
-            {
-                Console.WriteLine("Code Name: ");
-                codeName = Console.ReadLine();
-                if (validCodeNames.Contains(codeName))
-                {
-                    break; // Break the loop when valid input is provided.
-                }
-                else
-                {
-                    Console.WriteLine("Invalid professional");
-                }
-            }
-
-            //read in attack
-            while (true)
-            {
-                Console.WriteLine("Attack: ");
-                attStr = Console.ReadLine();
-                if (int.TryParse(attStr, out attNum) && attNum >= 1 && attNum <= 50)
-                {
-                    break; // Break the loop when valid input is provided.
-                }
-                else
-                {
-                    Console.WriteLine("Invalid input. Attack must be between 1 and 50.");
-                }
-            }
-
-            //read in health
-            while (true)
-            {
-                Console.WriteLine("Health: ");
-                hthStr = Console.ReadLine();
-                if (int.TryParse(hthStr, out hthNum) && hthNum >= 0 && hthNum <= 50)
-                {
-                    break; // Break the loop when valid input is provided.
-                }
-                else
-                {
-                    Console.WriteLine("Invalid input. Health must be between 1 and 50.");
-                }
-            }
-
-
-            right.Add(CreateProfessionalByCodeName(codeName, attNum, hthNum));
-
-        }
-
+        List<Professional> right = BuildTeam("right");
 
 
 		var game = new Game(new Team(left, Side.Left), new Team(right, Side.Right));
