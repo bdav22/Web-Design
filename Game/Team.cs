@@ -16,6 +16,7 @@ public class Team
 		Side = side;
 		_professionals = professionals.ToArray();
 
+		
 		Debug.Assert(_professionals.Length == MAX_PROFESSIONALS);
 
 		ForEach(p => p.Team = this);

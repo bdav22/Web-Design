@@ -72,17 +72,21 @@ internal class Program
 
         for (int i = 0; i < 5; i++)
         {
-            int attNum, hthNum;
+            int attNum = 0, hthNum = 0;
             string codeName;
 
             Console.WriteLine($"Enter {teamName} team professional at " + (i + 1) + ": ");
 
-            // Read in codename
+            //read in codename
             while (true)
             {
                 Console.WriteLine("Code Name: ");
                 codeName = Console.ReadLine();
-                if (validCodeNames.Contains(codeName))
+                if (codeName == "-")
+                {
+                   break;
+                }
+                else if (validCodeNames.Contains(codeName))
                 {
                     break;
                 }
@@ -92,35 +96,39 @@ internal class Program
                 }
             }
 
-            //read in attack
-            while (true)
+            if (codeName != "-")
             {
-                Console.WriteLine("Attack: ");
-                string attStr = Console.ReadLine();
-                if (int.TryParse(attStr, out attNum) && attNum >= 1 && attNum <= 50)
+                //read in attack
+                while (true)
                 {
-                    break;
+                    Console.WriteLine("Attack: ");
+                    string attStr = Console.ReadLine();
+                    if (int.TryParse(attStr, out attNum) && attNum >= 1 && attNum <= 50)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid input. Attack must be between 1 and 50.");
+                    }
                 }
-                else
-                {
-                    Console.WriteLine("Invalid input. Attack must be between 1 and 50.");
-                }
-            }
 
-            //read in health
-            while (true)
-            {
-                Console.WriteLine("Health: ");
-                string hthStr = Console.ReadLine();
-                if (int.TryParse(hthStr, out hthNum) && hthNum >= 0 && hthNum <= 50)
+                //read in health
+                while (true)
                 {
-                    break;
-                }
-                else
-                {
-                    Console.WriteLine("Invalid input. Health must be between 0 and 50.");
+                    Console.WriteLine("Health: ");
+                    string hthStr = Console.ReadLine();
+                    if (int.TryParse(hthStr, out hthNum) && hthNum >= 0 && hthNum <= 50)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid input. Health must be between 0 and 50.");
+                    }
                 }
             }
+                
 
             team.Add(CreateProfessionalByCodeName(codeName, attNum, hthNum));
         }
@@ -132,20 +140,15 @@ internal class Program
 
 
 
+
+
     //list of valid codenames
-    private static List<string> validCodeNames = new List<string> { "Bu", "Pr", "Ch", "GD", "Lw", "So", "Tr", "Nu", "Dc" };
+    private static List<string> validCodeNames = new List<string> { "Bu", "Pr", "Ch", "GD", "Lw", "So", "Tr", "Nu", "Dc", "-" };
 
     static void Main()
     {
 
-        //inits
-        string codeName;
-        string attStr;
-        string hthStr;
-
-
         List<Professional> left = BuildTeam("left");
-
         List<Professional> right = BuildTeam("right");
 
 
