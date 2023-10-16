@@ -77,7 +77,7 @@ internal class Program
 
             Console.WriteLine($"Enter {teamName} team professional at " + (i + 1) + ": ");
 
-            //read in codename
+            //read in codename (check if acceptable input)
             while (true)
             {
                 Console.WriteLine("Code Name: ");
