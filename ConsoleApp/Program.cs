@@ -82,11 +82,7 @@ internal class Program
             {
                 Console.WriteLine("Code Name: ");
                 codeName = Console.ReadLine();
-                if (codeName == "-")
-                {
-                   break;
-                }
-                else if (validCodeNames.Contains(codeName))
+                if (validCodeNames.Contains(codeName) || codeName == "-")
                 {
                     break;
                 }
@@ -95,7 +91,7 @@ internal class Program
                     Console.WriteLine("Invalid professional");
                 }
             }
-
+	    //if an actual professional
             if (codeName != "-")
             {
                 //read in attack
